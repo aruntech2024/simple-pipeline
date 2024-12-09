@@ -14,10 +14,16 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                #venv/bin/activate                # Activate the virtual environment
-                pytest --maxfail=1 
+                . venv/bin/activate                # Activate the virtual environment
+                pytest --maxfail=1 --disable-warnings \
+                    --html=report.html             # Generate HTML report
                 '''
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'report.html', onlyIfSuccessful: false
         }
     }
 }
