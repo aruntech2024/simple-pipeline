@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate                # Activate the virtual environment
-                pytest --maxfail=1 --disable-warnings --html=report.html --junitxml=report.xml
+                pytest --maxfail=1 --disable-warnings --html=report.html
              # Generate HTML report
                 '''
             }
