@@ -1,4 +1,4 @@
-pytest
-pytest-html
+pytest==8.3.4
+pytest-html==4.1.1
 pytest-junitxml
 
