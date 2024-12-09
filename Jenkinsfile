@@ -14,7 +14,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh '''
-                . venv/bin/activate                # Activate the virtual environment
+                #venv/bin/activate                # Activate the virtual environment
                 pytest --maxfail=1 
                 '''
             }
